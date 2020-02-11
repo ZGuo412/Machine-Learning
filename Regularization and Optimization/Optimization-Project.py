@@ -171,25 +171,25 @@ curve_y1 = [cp.sum_squares(w_opt).value for w_opt in w_vlist]
 curve_y2 = [cp.sum_squares((A*w_opt).T - b).value for w_opt in w_vlist]
 curve_y3 = [cp.sum_squares((A*w_opt).T).value for w_opt in w_vlist]
 
-plt.figure(1)
+plt.figure(1,figsize = (12,8))
 plt.plot(curve_y1, curve_y2)
 plt.xlabel(r'$\Vert \theta_{\alpha} \Vert_2^2$')
 plt.ylabel(r'$\Vert A \ theta_{\alpha} - b \Vert_2^2$')
 plt.savefig('figure1.png')
 
-plt.figure(2)
+plt.figure(2, figsize=(12,8))
 plt.plot(lambda_list, curve_y1)
 plt.xlabel(r'$\lambda$')
 plt.ylabel(r'$\Vert \theta_{\alpha} \Vert_2^2$')
 plt.savefig('figure2.png')
 
-plt.figure(3)
+plt.figure(3, figsize=(12,8))
 plt.plot(lambda_list, curve_y2)
 plt.xlabel(r'$\lambda$')
 plt.ylabel(r'$\Vert A \ theta_{\alpha} - b \Vert_2^2$')
 plt.savefig('figure3.png')
 
-plt.figure(4)
+plt.figure(4, figsize=(12,8))
 plt.plot(lambda_list, curve_y3)
 plt.xlabel(r'$\lambda$')
 plt.ylabel(r'$\Vert A \ theta_{\alpha} \Vert_2^2$')
